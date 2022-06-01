@@ -1,0 +1,99 @@
+* {
+ border: 1px solid red
+}
+
+body{
+  background-color: #FFFFFF;
+  display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+h1{
+  font-family: sans-serif;
+  font: Roboto;
+  font-size: 75px;
+}
+
+.swatches{
+  width: 100%;
+  height: 10%;
+  color: #97E1DE;
+  border: red;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  margin: 20px;
+}
+.swatch1{
+  background-color: #CBBE3F;
+  width: 10%;
+  height:10%;
+  padding: 25px;
+}
+
+.swatch2{
+  background-color: #A6E197;
+  width: 10%;
+  height:10%;
+  padding: 25px;
+}
+
+.swatch3{
+  background-color: #97E1DE;
+  width: 10%;
+  height:10%;
+  padding: 25px;
+}
+
+.swatch4{
+  background-color: #A497E1;
+  width: 10%;
+  height:10%;
+  padding: 25px;
+}
+
+.swatch5{
+  background-color: #CE97E1;
+  width: 10%;
+  height:10%;
+  padding: 25px;
+}
+
+.color-names{
+  display: flex;
+  flex-direction: row;
+}
+/* .swatch2, .swatch3, .swatch4, .swatch5{
+  width: 500px;
+  font-family: sans-serif;
+  font: Roboto;
+  font-size: 75px;
+  padding: 25px;
+} */
+
+div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+button{
+  font-family: sans-serif;
+  font: Roboto;
+  font-size: 25px;
+  margin:
+}
+
+.new-palette{
+  margin: 30px;
+}
+
+.save-palette{
+  margin: 200px;
+}
