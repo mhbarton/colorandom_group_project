@@ -8,19 +8,10 @@ var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
 
 
-
-
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
+
 // savePaletteButton.addEventListener('click', savePalette);
-
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
-
-// function randomPalette() {
-// var palette = new Color(randomColors[getRandomIndex]
-// }
 
 
 function generateRandomPalette() {
@@ -31,42 +22,24 @@ function generateRandomPalette() {
   }
   return color;
 }
-var randomColor = generateRandomPalette();
-
-// function assignRandomColors() {
-//   for (var i = 1; i <= 6; i++) {
-//     if (!$(`.color-${i}`).hasClass("lock")) {
-//       var color = generateRandomPalette();
-//       $(`.color-${i}-text`).text(color);
-//       $(`.color-${i}`).css("background-color", color);
-//     }
-//   }
-// }
 
 function assignRandomColors() {
+var randomColor1 = generateRandomPalette();
+var randomColor2 = generateRandomPalette();
+var randomColor3 = generateRandomPalette();
+var randomColor4 = generateRandomPalette();
+var randomColor5 = generateRandomPalette();
 
-document.getElementById("1").style.backgroundColor = randomColor;
-document.getElementById("2").style.backgroundColor = randomColor;
-document.getElementById("3").style.backgroundColor = randomColor;
-document.getElementById("4").style.backgroundColor = randomColor;
-document.getElementById("5").style.backgroundColor = randomColor;
+document.getElementById("1").style.backgroundColor = randomColor1;
+document.getElementById("2").style.backgroundColor = randomColor2;
+document.getElementById("3").style.backgroundColor = randomColor3;
+document.getElementById("4").style.backgroundColor = randomColor4;
+document.getElementById("5").style.backgroundColor = randomColor5;
 
-hexName1.innerText = randomColor;
-hexName2.innerText = randomColor;
-hexName3.innerText = randomColor;
-hexName4.innerText = randomColor;
-hexName5.innerText = randomColor;
+hexName1.innerHTML = randomColor1;
+hexName2.innerText = randomColor2;
+hexName3.innerText = randomColor3;
+hexName4.innerText = randomColor4;
+hexName5.innerText = randomColor5;
 
 }
-
-//
-// function currentPalette() {
-//   var palette = new Palette ({
-//     swatch1:{id: 1, color: generateRandomPalette(), locked: false},
-//     swatch2:{id: 2, color: generateRandomPalette(), locked: false},
-//     swatch3:{id: 3, color: generateRandomPalette(), locked: false},
-//     swatch4:{id: 4, color: generateRandomPalette(), locked: false},
-//     swatch5:{id: 5, color: generateRandomPalette(), locked: false},
-//   })
-//   }
-//   currentPalette();
