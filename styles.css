@@ -18,8 +18,7 @@ body{
 
 
 h1{
-  font-family: sans-serif;
-  font: Roboto;
+  font-family: monospace;
   font-size: 125px;
   letter-spacing: 25px;
   margin-left: -280px;
@@ -44,50 +43,20 @@ h1{
 .swatches{
   background-color: ;
   width: 5%;
-  height:20%;
-  padding: 70px;
-  margin-right: 36px;
+  height: 20%;
+  padding: 96px;
+  margin-right: 48px;
+  margin-bottom: 5%;
   border-color: black;
   border-style: solid;
   border-width: thin;
 }
 
-/* .swatch2{
-  background-color: #A6E197;
-  width: 5%;
-  height:20%;
-  padding: 70px;
-  margin-right: 29px;
-}
-
-.swatch3{
-  background-color: #97E1DE;
-  width: 5%;
-  height:20%;
-  padding: 70px;
-  margin-right: 29px;
-}
-
-.swatch4{
-  background-color: #A497E1;
-  width: 5%;
-  height:20%;
-  padding: 70px;
-  margin-right: 29px;
-}
-
-.swatch5{
-  background-color: #CE97E1;
-  width: 5%;
-  height:20%;
-  padding: 70px;
-} */
-
 .color-names{
   display: flex;
   flex-direction: row;
   width: auto;
-  margin-right: -104px;
+  margin-right: -72px;
   margin-bottom: 10%;
   margin-top: -8%;
   align-items: center;
@@ -97,19 +66,23 @@ h1{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 400px;
+  margin-right: 491px;
 }
 
 h4{
-  margin-right: 80px;
-  font-family: sans-serif;
-  font: Roboto;
+  margin-right: 74px;
+  font-family: monospace;
+  font-size: 23px;
+}
+
+.swatch-button{
+  background-color: white;
+  border-color: white;
 }
 
 .side-bar{
   display: flex;
-  font-family: sans-serif;
-  font: Roboto;
+  font-family: monospace;
   font-size: 25px;
   font-weight: bold;
   height: 500%;
@@ -142,9 +115,9 @@ h3{
 
 .new-button, .save-button {
   margin: 60px;
-  font-family: sans-serif;
-  font: Roboto;
-  font-size: 25px;
+  font-family: monospace;
+  /* font: Roboto; */
+  font-size: 28px;
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -159,7 +132,6 @@ h3{
   color: #41403e;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
