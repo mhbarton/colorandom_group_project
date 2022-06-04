@@ -6,13 +6,19 @@ var hexName2 = document.querySelector('#swatch2');
 var hexName3 = document.querySelector('#swatch3');
 var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
-var unlockButton = document.querySelector('.unlock-button');
-var lockButton = document.querySelector('.lock-button');
+var unlockButtons = document.querySelectorAll('.unlock-button');
+var lockButtons = document.querySelectorAll('.lock-button');
 
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
-unlockButton.addEventListener('click', lockSwatch);
+for (var i = 0; i < unlockButtons.length; i++) {
+  unlockButtons[i].addEventListener('click', lockSwatch);
+}
+for (var i = 0; i < lockButtons.length; i++){
+  lockButtons[i].addEventListener('click', unlockSwatch);
+}
+
 
 // savePaletteButton.addEventListener('click', savePalette);
 // clicking log
@@ -53,21 +59,42 @@ hexName5.innerText = randomColor5;
 // clickig unlock button will SHOW
 
 // will show the lock button
-function removeHidden(buttons) {
-  buttons.classList.remove('hidden');
+function removeHidden(event) {
+event.target.classList.remove('hidden');
+event.target.classList.add('hidden');
 }
 
-// will hide the unlock button
-function addHidden(buttons) {
-  buttons.classList.add('hidden');
+// will hide the unlock buttons
+function addHidden(event) {
+event.target.classList.remove('hidden');
+event.target.classList.add('hidden');
 }
 
 function lockSwatch() {
     // if (unlockButton.click) {
-    addHidden(unlockButton)
-    removeHidden(lockButton)
+    addHidden(unlockButtons)
+    removeHidden(lockButtons)
       // } else if (!unlockButton.click) {
         // generateRandomPalette()
           // lockButton.classList.remove('hidden');
         }
 // lockSwatch();
+
+function unlockSwatch(){
+  addHidden(lockButtons)
+  removeHidden(unlockButtons)
+}
+
+// function saveSwatch(){
+//  if (!this.locked) {
+//     this.locked = true
+//   return;
+// }else if (this.locked === true) {
+//   assignRandomColors()
+//   }
+//   unlockSwatch();
+// }
+// if (!this.locked) {
+//    this.locked = true
+//    return;
+// } else if (this.locked === true)
