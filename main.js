@@ -6,18 +6,16 @@ var hexName2 = document.querySelector('#swatch2');
 var hexName3 = document.querySelector('#swatch3');
 var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
-// var unlockButton = document.querySelector('#ub2');
-// var lockButton1 = document.querySelector('#lb1');
-// var lockButton2 = document.querySelector('#lb2');
+var unlockButton = document.querySelector('.unlock-button');
+var lockButton = document.querySelector('.lock-button');
 
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
 unlockButton.addEventListener('click', lockSwatch);
-lockButton.addEventListener('click', unlockSwatch);
 
 // savePaletteButton.addEventListener('click', savePalette);
-// clicking lock button should show unlock button
+// clicking log
 
 function generateRandomPalette() {
   var letters = '0123456789ABCDEF';
@@ -52,7 +50,7 @@ hexName5.innerText = randomColor5;
 // all the buttons will be unlocked
 // if user decieds to save a swatch, they will click the unlock button
 // the unlock button will hide, and lock button will appear and will not invoke generateRandomPalette
-// clicking unlock button will SHOW
+// clickig unlock button will SHOW
 
 // will show the lock button
 function removeHidden(buttons) {
@@ -64,30 +62,12 @@ function addHidden(buttons) {
   buttons.classList.add('hidden');
 }
 
-document.getElementById("ub1").addEventListener('click', switchButtons)
-function switchButtons() {
-var target = e.target;
-
-target.classList.toggle("unlock-button")
-target.classList.toggle("lock-button")
-}
-
-
-// function lockSwatch() {
-//     // if (unlockButton.click) {
-//     addHidden(unlockButton1)
-//     removeHidden(lockButton1)
-//     addHidden(unlockButton2)
-//     removeHidden(lockButton2)
-//       // } else if (!unlockButton.click) {
-//         // generateRandomPalette()
-//           // lockButton.classList.remove('hidden');
-// }
+function lockSwatch() {
+    // if (unlockButton.click) {
+    addHidden(unlockButton)
+    removeHidden(lockButton)
+      // } else if (!unlockButton.click) {
+        // generateRandomPalette()
+          // lockButton.classList.remove('hidden');
+        }
 // lockSwatch();
-//   function unlockSwatch() {
-//   addHidden(lockButton1)
-//   removeHidden(unlockButton1)
-//   addHidden(lockButton2)
-//   removeHidden(unlockButton2)
-//   }
-// unlockSwatch();
