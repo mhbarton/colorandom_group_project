@@ -8,6 +8,7 @@ var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
 var unlockButtons = document.querySelectorAll('.unlock-button');
 var lockButtons = document.querySelectorAll('.lock-button');
+var colorNames = document.querySelector('.color-names');
 
 
 window.addEventListener('load', assignRandomColors);
@@ -17,6 +18,38 @@ for (var i = 0; i < unlockButtons.length; i++) {
 }
 for (var i = 0; i < lockButtons.length; i++){
   lockButtons[i].addEventListener('click', unlockSwatch);
+}
+
+colorNames.addEventListener('click', function(event) {
+  console.log(event.target.className)
+  console.log(event.target.id)
+// if (event.target.className.includes('unlock-button')) {
+//   console.log("colorNames")
+// removeHidden()
+// } else if (event.target.className.includes('lock-button')) {
+//   console.log("HELP!");
+// addHidden()
+// } else {
+//   return
+// }
+});
+
+function removeHidden(colorNames) {
+colorNames.classList.remove('hidden');
+}
+
+function addHidden(colorNames) {
+colorNames.classList.add('hidden');
+}
+
+function lockSwatch() {
+    addHidden(unlockButtons)
+    removeHidden(lockButtons)
+        }
+
+function unlockSwatch(){
+  addHidden(lockButtons)
+  removeHidden(unlockButtons)
 }
 
 
@@ -58,32 +91,29 @@ hexName5.innerText = randomColor5;
 // the unlock button will hide, and lock button will appear and will not invoke generateRandomPalette
 // clickig unlock button will SHOW
 
-// will show the lock button
-function removeHidden(event) {
-event.target.classList.remove('hidden');
-event.target.classList.add('hidden');
-}
+// function removeHidden(colorNames) {
+// colorNames.classList.remove('hidden');
+// colorNames.classList.add('hidden');
+// }
+//
+// function addHidden(colorNames) {
+// // colorNames.classList.remove('hidden');
+// colorNames.classList.toggle('hidden');
+// }
 
-// will hide the unlock buttons
-function addHidden(event) {
-event.target.classList.remove('hidden');
-event.target.classList.add('hidden');
-}
 
-function lockSwatch() {
-    // if (unlockButton.click) {
-    addHidden(unlockButtons)
-    removeHidden(lockButtons)
-      // } else if (!unlockButton.click) {
-        // generateRandomPalette()
-          // lockButton.classList.remove('hidden');
-        }
-// lockSwatch();
+// // will show the lock button
+// function removeHidden(event) {
+// event.target.classList.remove('hidden');
+// event.target.classList.add('hidden');
+// }
 
-function unlockSwatch(){
-  addHidden(lockButtons)
-  removeHidden(unlockButtons)
-}
+// // will hide the unlock buttons
+// function addHidden(event) {
+// event.target.classList.remove('hidden');
+// event.target.classList.add('hidden');
+// }
+
 
 // function saveSwatch(){
 //  if (!this.locked) {
