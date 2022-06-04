@@ -31,6 +31,7 @@ class Palette {
 
 
 
+
 // Color class will be a random hex code that is a series of numbers 0-9 and A-F
 // This will display as the hex code and swatch color on the site underneath the color swatch with the lock
 // Color will have an event listener so the user can lock in a color selection

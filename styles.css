@@ -163,3 +163,7 @@ h3{
 .save-palette{
   margin: 200px;
 }
+
+.hidden {
+  display: none;
+}
