@@ -67,6 +67,7 @@ function assignRandomColors() {
   hexName5.innerText = randomColor5;
 }
 
+
 function savePalette() {
   var miniSwatchBox =
   `<section id="mini-swatch-box" class="mini-swatch-box">
