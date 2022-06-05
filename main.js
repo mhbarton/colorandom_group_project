@@ -1,3 +1,4 @@
+// var palette = new Palette;
 var newPaletteButton = document.querySelector('.new-button');
 var savePaletteButton = document.querySelector('.save-button');
 var swatches = document.querySelectorAll('.swatches');
@@ -14,29 +15,38 @@ var lock4 = document.getElementById('lock-4');
 var lock5 = document.getElementById('lock-5');
 var locks = [ lock1, lock2, lock3, lock4, lock5];
 var sideBar = document.querySelector('.side-bar')
+// var savedPalettes = [];
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
-lock1.addEventListener('click', changeSrc);
-lock2.addEventListener('click', changeSrc);
-lock3.addEventListener('click', changeSrc);
-lock4.addEventListener('click', changeSrc);
-lock5.addEventListener('click', changeSrc);
+lock1.addEventListener('click', changeSrcLock, changeSrcUnlock);
+lock2.addEventListener('click', changeSrcLock, changeSrcUnlock);
+lock3.addEventListener('click', changeSrcLock, changeSrcUnlock);
+lock4.addEventListener('click', changeSrcLock, changeSrcUnlock);
+lock5.addEventListener('click', changeSrcLock, changeSrcUnlock);
 savePaletteButton.addEventListener('click', savePalette)
+// deleteSavedPalettes.addEventListener('dblclick', deleteSaved)
 
-function changeSrc() {
-  for (var i = 0; i < locks.length; i++) {
 
-    if (locks[i].id === event.target.id) {
-      if(locks[i].src != "file:///Users/daniellesweeny/turing/module1/colorandom_group_project/assets/lock.svg") {
-          locks[i].src = "./assets/lock.svg"
+  function changeSrcLock() {
+    for (var i = 0; i < locks.length; i++) {
+      if ((locks[i].id === event.target.id) && (locks[i].src != "./assets/lock.png")) {
+            locks[i].src = "./assets/lock.png"
+          } else
+              locks[i].src='./assets/unlock.png'
+          }
         }
-        else {
-            locks[i].src='./assets/unlock (1).svg'
+
+  // if you click on it when it's locked unlock it
+function changeSrcUnlock (){
+  for (var i = 0; i < locks.length; i++){
+    if ((locks[i].id === event.target.id) && (locks[i].src != "./assets/unlock.png")) {
+          locks[i].src = "./assets/unlock.png"
+        } else
+            locks[i].src='./assets/lock.png'
         }
       }
-    }
-  }
+
 
 function generateRandomPalette() {
   var letters = '0123456789ABCDEF';
@@ -68,18 +78,28 @@ function assignRandomColors() {
 }
 
 function savePalette() {
+  var savedPalette = new Palette(colors, id)
+  console.log(savedPalette)
   var miniSwatchBox =
   `<section id="mini-swatch-box" class="mini-swatch-box">
     <container id="mini-1" style="background-color:${document.getElementById("1").style.backgroundColor}" class="mini-swatches" >
     </container>
-    <container id="mini-1" style="background-color:${document.getElementById("2").style.backgroundColor}" class="mini-swatches" >
+    <container id="mini-2" style="background-color:${document.getElementById("2").style.backgroundColor}" class="mini-swatches" >
     </container>
-    <container id="mini-1" style="background-color:${document.getElementById("3").style.backgroundColor}" class="mini-swatches" >
+    <container id="mini-3" style="background-color:${document.getElementById("3").style.backgroundColor}" class="mini-swatches" >
     </container>
-    <container id="mini-1" style="background-color:${document.getElementById("4").style.backgroundColor}" class="mini-swatches" >
+    <container id="mini-4" style="background-color:${document.getElementById("4").style.backgroundColor}" class="mini-swatches" >
     </container>
-    <container id="mini-1" style="background-color:${document.getElementById("5").style.backgroundColor}" class="mini-swatches" >
+    <container id="mini-5" style="background-color:${document.getElementById("5").style.backgroundColor}" class="mini-swatches" >
     </container>
     </section>`
     sideBar.innerHTML += miniSwatchBox
 }
+
+
+// function deleteSaved(event){
+//   for(var i = 0; i < savedPalettes.length; i++){
+//     if(savedPalettes[i].id == event.target.id){
+//     savedPalettes.splice(i, 1);
+//     }
+//   }
