@@ -98,11 +98,12 @@ h4{
   background-color: white;
   overflow-x: hidden;
   padding-top: 20px;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   border-color: black;
   border-style: solid;
   border-width: thin;
+  flex-direction: column;
 }
 
 h3{
@@ -150,6 +151,7 @@ h3{
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
 .new-button:hover, .save-button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
@@ -159,6 +161,25 @@ h3{
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
+.mini-swatches{
+  background-color: ;
+  padding: 22px;
+  margin: 0 auto;
+  float: left;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+}
+
+.mini-swatch-box{
+  display: block;
+    height: 136px;
+    /* grid-template-columns: 200px; */
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10px;
+    align-content: space-around;
+    justify-items: center;
+}
 
 .new-palette{
   margin: 30px;
@@ -167,6 +188,8 @@ h3{
 .save-palette{
   margin: 200px;
 }
+
+
 
 .hidden {
   display: none;

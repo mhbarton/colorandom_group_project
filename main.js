@@ -6,22 +6,23 @@ var hexName2 = document.querySelector('#swatch2');
 var hexName3 = document.querySelector('#swatch3');
 var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
-var lockButtons = document.querySelectorAll('.lock-buttons')
 var colorNames = document.querySelector('.color-names');
 var lock1 = document.getElementById('lock-1');
-var lock2 = document.getElementById('lock-2')
-var lock3 = document.getElementById('lock-3')
-var lock4 = document.getElementById('lock-4')
-var lock5 = document.getElementById('lock-5')
-var locks = [ lock1, lock2, lock3, lock4, lock5]
+var lock2 = document.getElementById('lock-2');
+var lock3 = document.getElementById('lock-3');
+var lock4 = document.getElementById('lock-4');
+var lock5 = document.getElementById('lock-5');
+var locks = [ lock1, lock2, lock3, lock4, lock5];
+var sideBar = document.querySelector('.side-bar')
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
 lock1.addEventListener('click', changeSrc);
-lock2.addEventListener('click', changeSrc)
+lock2.addEventListener('click', changeSrc);
 lock3.addEventListener('click', changeSrc);
-lock4.addEventListener('click', changeSrc)
-lock5.addEventListener('click', changeSrc)
+lock4.addEventListener('click', changeSrc);
+lock5.addEventListener('click', changeSrc);
+savePaletteButton.addEventListener('click', savePalette)
 
 function changeSrc() {
   for (var i = 0; i < locks.length; i++) {
@@ -59,9 +60,26 @@ function assignRandomColors() {
   document.getElementById("4").style.backgroundColor = randomColor4;
   document.getElementById("5").style.backgroundColor = randomColor5;
 
-  hexName1.innerHTML = randomColor1;
+  hexName1.innerText = randomColor1;
   hexName2.innerText = randomColor2;
   hexName3.innerText = randomColor3;
   hexName4.innerText = randomColor4;
   hexName5.innerText = randomColor5;
+}
+
+function savePalette() {
+  var miniSwatchBox =
+  `<section id="mini-swatch-box" class="mini-swatch-box">
+    <container id="mini-1" style="background-color:${document.getElementById("1").style.backgroundColor}" class="mini-swatches" >
+    </container>
+    <container id="mini-1" style="background-color:${document.getElementById("2").style.backgroundColor}" class="mini-swatches" >
+    </container>
+    <container id="mini-1" style="background-color:${document.getElementById("3").style.backgroundColor}" class="mini-swatches" >
+    </container>
+    <container id="mini-1" style="background-color:${document.getElementById("4").style.backgroundColor}" class="mini-swatches" >
+    </container>
+    <container id="mini-1" style="background-color:${document.getElementById("5").style.backgroundColor}" class="mini-swatches" >
+    </container>
+    </section>`
+    sideBar.innerHTML += miniSwatchBox
 }
