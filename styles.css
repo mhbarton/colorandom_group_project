@@ -1,8 +1,8 @@
-/* * {
- border: 1px solid red
-} */
+* {
+  font-family: monospace;
+}
 
-body{
+body {
   background-color: #FFFFFF;
   display: flex;
     justify-content: space-evenly;
@@ -16,9 +16,7 @@ body{
   display:flex;
 }
 
-
-h1{
-  font-family: monospace;
+h1 {
   font-size: 125px;
   letter-spacing: 25px;
   margin-left: -280px;
@@ -27,7 +25,7 @@ h1{
   -webkit-text-fill-color: transparent;
 }
 
-.swatch-box{
+.swatch-box {
   width: 70%;
   height: 10%;
   color: #97E1DE;
@@ -40,7 +38,8 @@ h1{
   margin: 20px;
   margin-left: -120px;
 }
-.swatches{
+
+.swatches {
   background-color: ;
   width: 5%;
   height: 20%;
@@ -52,7 +51,7 @@ h1{
   border-width: thin;
 }
 
-.color-names{
+.color-names {
   display: flex;
   flex-direction: row;
   width: auto;
@@ -62,31 +61,29 @@ h1{
   align-items: center;
 }
 
-.parent-wrapper{
+.parent-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 491px;
 }
 
-h4{
+h4 {
   margin-right: 74px;
-  font-family: monospace;
   font-size: 23px;
 }
 
-.lock-buttons{
+.lock-buttons {
   border: 2px solid black;
 }
 
-.swatch-button{
+.swatch-button {
   background-color: white;
   border-color: white;
 }
 
-.side-bar{
+.side-bar {
   display: flex;
-  font-family: monospace;
   font-size: 25px;
   font-weight: bold;
   height: 500%;
@@ -106,12 +103,12 @@ h4{
   flex-direction: column;
 }
 
-h3{
+h3 {
   height: 500%;
 
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -120,8 +117,6 @@ h3{
 
 .new-button, .save-button {
   margin: 60px;
-  font-family: monospace;
-  /* font: Roboto; */
   font-size: 28px;
   align-self: center;
   background-color: #fff;
@@ -161,7 +156,7 @@ h3{
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
-.mini-swatches{
+.mini-swatches {
   background-color: ;
   padding: 22px;
   margin: 0 auto;
@@ -171,25 +166,26 @@ h3{
   border-width: thin;
 }
 
-.mini-swatch-box{
+.mini-swatch-box {
   display: block;
-    height: 136px;
-    /* grid-template-columns: 200px; */
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 10px;
-    align-content: space-around;
-    justify-items: center;
+  height: 136px;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 10px;
+  align-content: space-around;
+  justify-items: center;
 }
 
-.new-palette{
+.trash-icon {
   margin: 30px;
 }
 
-.save-palette{
-  margin: 200px;
+.new-palette {
+  margin: 30px;
 }
 
-
+.save-palette {
+  margin: 200px;
+}
 
 .hidden {
   display: none;

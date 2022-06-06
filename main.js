@@ -1,4 +1,3 @@
-// var palette = new Palette;
 var newPaletteButton = document.querySelector('.new-button');
 var savePaletteButton = document.querySelector('.save-button');
 var swatches = document.querySelectorAll('.swatches');
@@ -15,7 +14,7 @@ var lock4 = document.getElementById('lock-4');
 var lock5 = document.getElementById('lock-5');
 var locks = [ lock1, lock2, lock3, lock4, lock5];
 var sideBar = document.querySelector('.side-bar')
-// var savedPalettes = [];
+
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
@@ -37,7 +36,6 @@ sideBar.addEventListener('click', deleteSaved)
           }
         }
 
-  // if you click on it when it's locked unlock it
 function changeSrcUnlock (){
   for (var i = 0; i < locks.length; i++){
     if ((locks[i].id === event.target.id) && (locks[i].src != "./assets/unlock.png")) {
@@ -46,7 +44,6 @@ function changeSrcUnlock (){
             locks[i].src='./assets/lock.png'
         }
       }
-
 
 function generateRandomPalette() {
   var letters = '0123456789ABCDEF';
@@ -77,7 +74,6 @@ function assignRandomColors() {
   hexName5.innerText = randomColor5;
 }
 
-
 function savePalette() {
   var miniSwatchBox =
   `<section id="mini-swatch-box" class="mini-swatch-box">
@@ -96,7 +92,6 @@ function savePalette() {
     </section>`
     sideBar.innerHTML += miniSwatchBox
 }
-
 
 function deleteSaved(event){
   if (event.target.classList.contains("trash-icon")) {
