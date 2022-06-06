@@ -1,24 +1,22 @@
-var newPaletteButton = document.querySelector('.new-button');
-var savePaletteButton = document.querySelector('.save-button');
-var swatches = document.querySelectorAll('.swatches');
+var colorNames = document.querySelector('.color-names');
 var hexName1 = document.querySelector('#swatch1');
 var hexName2 = document.querySelector('#swatch2');
 var hexName3 = document.querySelector('#swatch3');
 var hexName4 = document.querySelector('#swatch4');
 var hexName5 = document.querySelector('#swatch5');
-var colorNames = document.querySelector('.color-names');
 var lock1 = document.getElementById('lock-1');
 var lock2 = document.getElementById('lock-2');
 var lock3 = document.getElementById('lock-3');
 var lock4 = document.getElementById('lock-4');
 var lock5 = document.getElementById('lock-5');
-var locks = [ lock1, lock2, lock3, lock4, lock5];
+var locks = [lock1, lock2, lock3, lock4, lock5];
+var newPaletteButton = document.querySelector('.new-button');
+var savePaletteButton = document.querySelector('.save-button');
 var sideBar = document.querySelector('.side-bar')
-
+var swatches = document.querySelectorAll('.swatches');
 
 window.addEventListener('load', assignRandomColors);
 newPaletteButton.addEventListener('click', assignRandomColors);
-lock1.addEventListener('click', changeSrcLock, changeSrcUnlock);
 lock2.addEventListener('click', changeSrcLock, changeSrcUnlock);
 lock3.addEventListener('click', changeSrcLock, changeSrcUnlock);
 lock4.addEventListener('click', changeSrcLock, changeSrcUnlock);
@@ -27,25 +25,27 @@ savePaletteButton.addEventListener('click', savePalette)
 sideBar.addEventListener('click', deleteSaved)
 
 
-  function changeSrcLock() {
+function changeSrcLock() {
     for (var i = 0; i < locks.length; i++) {
       if ((locks[i].id === event.target.id) && (locks[i].src != "./assets/lock.png")) {
             locks[i].src = "./assets/lock.png"
-          } else
-              locks[i].src='./assets/unlock.png'
-          }
-        }
+          } else {
+              locks[i].src = './assets/unlock.png'
+    }
+  }
+}
 
-function changeSrcUnlock (){
+function changeSrcUnlock() {
   for (var i = 0; i < locks.length; i++){
     if ((locks[i].id === event.target.id) && (locks[i].src != "./assets/unlock.png")) {
           locks[i].src = "./assets/unlock.png"
-        } else
-            locks[i].src='./assets/lock.png'
-        }
-      }
+        } else {
+            locks[i].src = './assets/lock.png'
+    }
+  }
+}
 
-function generateRandomPalette() {
+function generateRandomPalette(event) {
   var letters = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
@@ -103,6 +103,5 @@ function deleteSaved(event){
     savePalette();
     return sideBar;
     }
-
   }
 }
