@@ -25,7 +25,7 @@ lock3.addEventListener('click', changeSrcLock, changeSrcUnlock);
 lock4.addEventListener('click', changeSrcLock, changeSrcUnlock);
 lock5.addEventListener('click', changeSrcLock, changeSrcUnlock);
 savePaletteButton.addEventListener('click', savePalette)
-// deleteSavedPalettes.addEventListener('dblclick', deleteSaved)
+sideBar.addEventListener('click', deleteSaved)
 
 
   function changeSrcLock() {
@@ -78,8 +78,6 @@ function assignRandomColors() {
 }
 
 function savePalette() {
-  var savedPalette = new Palette(colors, id)
-  console.log(savedPalette)
   var miniSwatchBox =
   `<section id="mini-swatch-box" class="mini-swatch-box">
     <container id="mini-1" style="background-color:${document.getElementById("1").style.backgroundColor}" class="mini-swatches" >
@@ -92,14 +90,23 @@ function savePalette() {
     </container>
     <container id="mini-5" style="background-color:${document.getElementById("5").style.backgroundColor}" class="mini-swatches" >
     </container>
+    <container class="trash-icon">🗑
+    </container>
     </section>`
     sideBar.innerHTML += miniSwatchBox
 }
 
 
-// function deleteSaved(event){
-//   for(var i = 0; i < savedPalettes.length; i++){
-//     if(savedPalettes[i].id == event.target.id){
-//     savedPalettes.splice(i, 1);
-//     }
-//   }
+function deleteSaved(event){
+  if (event.target.classList.contains("trash-icon")) {
+    event.target.closest("section").remove();
+  }
+  for(var i = 0; i < sideBar.length; i++){
+    if(sideBar[i].id == event.target.parentElement.id){
+    sideBar.splice(i, 1);
+    savePalette();
+    return sideBar;
+    }
+
+  }
+}
