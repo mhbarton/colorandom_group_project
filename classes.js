@@ -13,3 +13,4 @@ class Palette {
     this.id = id;
     this.locked = false;
   }
+}
